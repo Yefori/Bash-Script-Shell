@@ -1,2 +1,2 @@
-# Bash-Script-Shell
-Some Bash-Scripts.
+# Shell-Scripts
+Some shell scripts of Linux.
