@@ -6,6 +6,7 @@ python scanner.py 43.225.100.0/24 -t 50 -T 5 -p 22 > list
 echo -e '' > result
 function  for_in_file(){
 For  i  in  `cat list`
+do
 echo -e '\n\n' >> result
 /usr/local/bin/expect <<-EOF
 set timeout 2
@@ -17,7 +18,6 @@ expect {
 send "free\r">>result
 expect eof
 EOF
-do
 
 done
 }
