@@ -8,7 +8,7 @@ echo -e '' > result
 for  i  in  `cat list`
 do
 echo -e $i':\n' >> result
-/usr/bin/expect <<-EOF | grep -E "total|Mem|Swap|Disk|cpu cores" >> result
+/usr/bin/expect <<-EOF | grep -E "total|Mem|Swap|Disk|cpu cores" | grep -v spawn >> result
 set timeout 2
 
 spawn ssh root@$i free -h && fdisk -l | grep Disk && cat /proc/cpuinfo | grep 'cpu cores' | uniq
